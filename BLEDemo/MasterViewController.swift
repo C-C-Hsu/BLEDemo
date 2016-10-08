@@ -83,8 +83,16 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        let object = objects[indexPath.row] as! NSDate
-        cell.textLabel!.text = object.description
+        let allKeys = Array(allItems.keys)
+        let targetKey = allKeys[indexPath.row]
+        let targetItem = allItems[targetKey]
+        
+        let name = targetItem?.peripheral.name ?? "Unknown"
+        cell.textLabel!.text = "\(name) RSSI: \(targetItem?.lastRSSI)"
+        
+        let lastSeenSecondsAgo = String(format: "%.1f", Date().timeIntervalSince(targetItem!.lastSeenDateTime))
+        cell.detailTextLabel!.text = "Last seen \(lastSeenSecondsAgo) seconds ago."
+        
         return cell
     }
 
