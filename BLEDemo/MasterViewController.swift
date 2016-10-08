@@ -89,6 +89,17 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
+    
+    func showAlert(_ msssage:String) {
+        
+        let alert = UIAlertController(title: "OK", message: msssage, preferredStyle: .alert)
+        
+        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        alert.addAction(ok)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
 
     // CBCentralManagerDelegate Methods
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
@@ -97,7 +108,7 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
         
         if state != .poweredOn {
             // Error oucur.
-            
+            showAlert("BLE is not available. (Error: \(state.rawValue))")
         }
     }
 }
