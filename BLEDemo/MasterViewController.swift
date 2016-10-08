@@ -90,6 +90,15 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
         }
     }
 
-
+    // CBCentralManagerDelegate Methods
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        
+        let state = central.state
+        
+        if state != .poweredOn {
+            // Error oucur.
+            
+        }
+    }
 }
 
