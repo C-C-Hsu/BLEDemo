@@ -30,6 +30,8 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        
+        centralManager = CBCentralManager(delegate: self, queue:nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -96,7 +98,7 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
     
     func showAlert(_ msssage:String) {
         
-        let alert = UIAlertController(title: "OK", message: msssage, preferredStyle: .alert)
+        let alert = UIAlertController(title: "狀態", message: msssage, preferredStyle: .alert)
         
         let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
         
