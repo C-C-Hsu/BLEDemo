@@ -96,6 +96,15 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
         }
     }
     
+    func startToScan() {
+        
+        NSLog("Start Scan.")
+        
+        let options = [CBCentralManagerOptionShowPowerAlertKey:true]
+        
+        centralManager?.scanForPeripherals(withServices: nil, options: options)
+    }
+    
     func showAlert(_ msssage:String) {
         
         let alert = UIAlertController(title: "狀態", message: msssage, preferredStyle: .alert)
