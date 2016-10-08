@@ -32,6 +32,8 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
         }
         
         centralManager = CBCentralManager(delegate: self, queue:nil)
+        
+        startToScan()
     }
 
     override func viewWillAppear(_ animated: Bool) {
