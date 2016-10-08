@@ -136,6 +136,18 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
         }
     }
  
-
+    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+     
+        let existItem = allItems[peripheral.identifier.uuidString]
+        
+        if existItem == nil {
+            
+            // It is a new item
+            let name = (peripheral.name ?? "Unknown")
+            NSLog("Discovered: \(name), RSSI: \(RSSI), UUID: \(peripheral.identifier.uuidString), AdvData: \(advertisementData.description)) ")
+        }
+        let newItem = DiscoveredItem(newperipheral: peripheral, RSSI: Int(RSSI))
+        allItems[peripheral.identifier.uuidString] = newItem
+    }
 }
 
