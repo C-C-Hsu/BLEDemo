@@ -17,6 +17,8 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
     var centralManager:CBCentralManager?
     
     var allItems = [String:DiscoveredItem]()
+    
+    var lastReloadDate:Date?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -148,6 +150,17 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
         }
         let newItem = DiscoveredItem(newperipheral: peripheral, RSSI: Int(RSSI))
         allItems[peripheral.identifier.uuidString] = newItem
+        
+        // Decide when to reload TableView
+        let now = Date()
+        
+        if existItem == nil || lastReloadDate == nil || now.timeIntervalSince(lastReloadDate!) > 2.0 {
+            
+            lastReloadDate = now
+            
+            // Refresh TableView
+            tableView.reloadData()
+        }
     }
 }
 
