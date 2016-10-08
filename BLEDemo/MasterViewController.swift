@@ -77,7 +77,7 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objects.count
+        return allItems.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -127,7 +127,7 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
         self.present(alert, animated: true, completion: nil)
     }
 
-    // CBCentralManagerDelegate Methods
+    // MARK: CBCentralManagerDelegate Methods
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         
         let state = central.state
