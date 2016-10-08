@@ -36,8 +36,6 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
         }
         
         centralManager = CBCentralManager(delegate: self, queue:nil)
-        
-        startToScan()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -143,6 +141,9 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
         if state != .poweredOn {
             // Error oucur.
             showAlert("BLE is not available. (Error: \(state.rawValue))")
+        } else {
+            
+            startToScan()
         }
     }
  
