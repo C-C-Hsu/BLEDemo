@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreBluetooth
 
-class MasterViewController: UITableViewController {
+class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
 
     var detailViewController: DetailViewController? = nil
     var objects = [Any]()
