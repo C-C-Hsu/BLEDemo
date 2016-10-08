@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B51988961DA8C85F00F43C93 /* DiscoveredItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51988951DA8C85F00F43C93 /* DiscoveredItem.swift */; };
 		B53F73F51DA8A39C00430B9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53F73F41DA8A39C00430B9D /* AppDelegate.swift */; };
 		B53F73F71DA8A39C00430B9D /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53F73F61DA8A39C00430B9D /* MasterViewController.swift */; };
 		B53F73F91DA8A39C00430B9D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53F73F81DA8A39C00430B9D /* DetailViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B51988951DA8C85F00F43C93 /* DiscoveredItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoveredItem.swift; sourceTree = "<group>"; };
 		B53F73F11DA8A39C00430B9D /* BLEDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLEDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B53F73F41DA8A39C00430B9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B53F73F61DA8A39C00430B9D /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				B53F73FD1DA8A39C00430B9D /* Assets.xcassets */,
 				B53F73FF1DA8A39C00430B9D /* LaunchScreen.storyboard */,
 				B53F74021DA8A39C00430B9D /* Info.plist */,
+				B51988951DA8C85F00F43C93 /* DiscoveredItem.swift */,
 			);
 			path = BLEDemo;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			files = (
 				B53F73F91DA8A39C00430B9D /* DetailViewController.swift in Sources */,
 				B53F73F71DA8A39C00430B9D /* MasterViewController.swift in Sources */,
+				B51988961DA8C85F00F43C93 /* DiscoveredItem.swift in Sources */,
 				B53F73F51DA8A39C00430B9D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

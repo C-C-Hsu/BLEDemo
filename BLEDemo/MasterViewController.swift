@@ -133,5 +133,6 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
             showAlert("BLE is not available. (Error: \(state.rawValue))")
         }
     }
+ 
 }
 
