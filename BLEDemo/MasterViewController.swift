@@ -105,6 +105,11 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
         centralManager?.scanForPeripherals(withServices: nil, options: options)
     }
     
+    func stopScanning() {
+    
+        centralManager?.stopScan()
+    }
+    
     func showAlert(_ msssage:String) {
         
         let alert = UIAlertController(title: "狀態", message: msssage, preferredStyle: .alert)
