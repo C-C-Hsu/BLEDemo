@@ -15,6 +15,8 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
     var objects = [Any]()
 
     var centralManager:CBCentralManager?
+    
+    var allItems = [String:DiscoveredItem]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -134,5 +136,6 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
         }
     }
  
+
 }
 
