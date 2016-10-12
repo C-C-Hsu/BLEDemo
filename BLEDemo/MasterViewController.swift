@@ -120,6 +120,7 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
         
         NSLog("Connecting to \(targetKey)...")
         
+        // 藍芽連線
         centralManager?.connect(targetItem!.peripheral, options: nil)
     }
     
@@ -149,6 +150,7 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
     }
 
     // MARK: CBCentralManagerDelegate Methods
+    
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         
         let state = central.state
@@ -213,4 +215,33 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
 
         startToScan()
     }
+    
+    // MARK: CBPeripheralDelegate Methods
+    
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
+        
+        if error != nil {
+            
+            // 藍芽取消連線
+            centralManager?.cancelPeripheralConnection(peripheral)
+            
+            NSLog("Error: \(error!)")
+            
+            return
+        }
+        
+        // Perpare for collect detailInfo
+        detailInfo = ""
+        restServies.removeAll()
+        
+        // Perpare to discovery characteristic for each service
+        restServies += peripheral.services!
+        
+        // Pick the first one
+        let targetService = restServies.first
+        restServies.remove(at: 0)
+        
+        peripheral.discoverCharacteristics(nil, for: targetService!)
+    }
+    
 }
