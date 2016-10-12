@@ -204,4 +204,13 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
         
         showAlert("Fail to connect!")
     }
+    
+    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+        
+        let name = peripheral.name ?? "UnKnown"
+        
+        NSLog("Disconnected to \(name)")
+
+        startToScan()
+    }
 }
