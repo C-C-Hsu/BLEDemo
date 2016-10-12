@@ -86,7 +86,7 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
         let targetItem = allItems[targetKey]
         
         let name = targetItem?.peripheral.name ?? "Unknown"
-        cell.textLabel!.text = "\(name) RSSI: \(targetItem?.lastRSSI)"
+        cell.textLabel!.text = "\(name) RSSI: \(targetItem!.lastRSSI)"
         
         let lastSeenSecondsAgo = String(format: "%.1f", Date().timeIntervalSince(targetItem!.lastSeenDateTime))
         cell.detailTextLabel!.text = "Last seen \(lastSeenSecondsAgo) seconds ago."
