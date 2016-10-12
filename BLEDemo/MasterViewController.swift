@@ -112,6 +112,17 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let allKeys = Array(allItems.keys)
+        let targetKey = allKeys[indexPath.row]
+        let targetItem = allItems[targetKey]
+        
+        NSLog("Connecting to \(targetKey)...")
+        
+        centralManager?.connect(targetItem!.peripheral, options: nil)
+    }
+    
     func startToScan() {
         
         NSLog("Start Scan.")
