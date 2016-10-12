@@ -186,5 +186,18 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
             tableView.reloadData()
         }
     }
+    
+    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+        
+        let name = peripheral.name ?? "UnKnown"
+        
+        NSLog("Connected to \(name)")
+        
+        stopScanning()
+        
+        // Try to discovery the services of peripheral
+        peripheral.delegate = self
+        peripheral.discoverServices(nil)
+    }
+    
 }
-
