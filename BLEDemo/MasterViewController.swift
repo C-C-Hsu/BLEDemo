@@ -200,4 +200,8 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
         peripheral.discoverServices(nil)
     }
     
+    func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
+        
+        showAlert("Fail to connect!")
+    }
 }
