@@ -14,6 +14,10 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
     var detailViewController: DetailViewController? = nil
     var objects = [Any]()
 
+    // For Servies/Characteristic scan
+    var detailInfo = ""
+    var restServies = [CBService]()
+    
     var centralManager:CBCentralManager?
     
     var allItems = [String:DiscoveredItem]()
