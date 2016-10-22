@@ -261,14 +261,16 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
             return
         }
         
-        detailInfo += "*** Peripheral: \(peripheral.name!)\n \(peripheral.services!.count) services."
+        detailInfo += "*** Peripheral: \(peripheral.name!)\n \(peripheral.services!.count) services.\n"
         
-        detailInfo += "*** Service: \(service.uuid.uuidString)\n \(service.characteristics!.count) characteristics."
+        detailInfo += "*** Service: \(service.uuid.uuidString)\n \(service.characteristics!.count) characteristics.\n"
         
         for tmp in service.characteristics! {
             
             detailInfo += "*** Characteristic: \(tmp.uuid.uuidString)\n"
         }
+        
+        detailInfo += "-------------------------------------\n"
         
         if restServies.isEmpty {
             
