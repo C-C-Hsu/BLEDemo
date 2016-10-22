@@ -94,5 +94,11 @@ class DetailViewController: UIViewController, CBPeripheralDelegate {
             logTextView.text! += content!
         }
     }
+    
+    // withResponse對應func
+    func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
+        
+        NSLog("didWriteValueFor")
+    }
 }
 
