@@ -10,6 +10,10 @@ import UIKit
 
 class SensorDetailViewController: UIViewController {
 
+    @IBOutlet weak var temperatureLabel: UILabel!
+    
+    @IBOutlet weak var humidityLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

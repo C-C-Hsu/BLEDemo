@@ -187,6 +187,10 @@
                             <constraint firstItem="9BZ-97-1t2" firstAttribute="top" secondItem="vPZ-qI-euj" secondAttribute="bottom" constant="27" id="uuO-Og-9DS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="humidityLabel" destination="8fa-GZ-MoB" id="RDC-7y-eFa"/>
+                        <outlet property="temperatureLabel" destination="9BZ-97-1t2" id="6zU-Z3-TkY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Tg-dS-bd9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
