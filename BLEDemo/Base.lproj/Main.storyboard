@@ -153,12 +153,44 @@
                     <view key="view" contentMode="scaleToFill" id="NdS-85-q8f">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9BZ-97-1t2">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="199" id="bpL-9b-Ayj"/>
+                                    <constraint firstAttribute="height" constant="141" id="jFf-w5-wkD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="65"/>
+                                <color key="textColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="H6t-Zs-Jp4">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fa-GZ-MoB">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="141" id="65s-40-Dqj"/>
+                                            <constraint firstAttribute="width" constant="199" id="QFj-KF-lWo"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="65"/>
+                                        <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="H6t-Zs-Jp4" firstAttribute="top" secondItem="9BZ-97-1t2" secondAttribute="bottom" constant="59" id="CJR-2m-HGN"/>
+                            <constraint firstItem="9BZ-97-1t2" firstAttribute="leading" secondItem="NdS-85-q8f" secondAttribute="leadingMargin" constant="45" id="Kyh-8Y-U7y"/>
+                            <constraint firstItem="9BZ-97-1t2" firstAttribute="centerX" secondItem="NdS-85-q8f" secondAttribute="centerX" id="Xkd-HA-jgO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9BZ-97-1t2" secondAttribute="trailing" constant="44" id="caH-ac-q2f"/>
+                            <constraint firstItem="H6t-Zs-Jp4" firstAttribute="centerX" secondItem="NdS-85-q8f" secondAttribute="centerX" id="gED-a2-sPy"/>
+                            <constraint firstItem="9BZ-97-1t2" firstAttribute="top" secondItem="vPZ-qI-euj" secondAttribute="bottom" constant="27" id="uuO-Og-9DS"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Tg-dS-bd9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1521" y="-631"/>
+            <point key="canvasLocation" x="1520.625" y="-631.69014084507046"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">
