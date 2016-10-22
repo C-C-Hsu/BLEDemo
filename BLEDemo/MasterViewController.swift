@@ -126,14 +126,9 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let allKeys = Array(allItems.keys)
-        let targetKey = allKeys[indexPath.row]
-        let targetItem = allItems[targetKey]
+        shouldTalking = true
         
-        NSLog("Connecting to \(targetKey)...")
-        
-        // 藍芽連線
-        centralManager?.connect(targetItem!.peripheral, options: nil)
+        startToConnect(indexPath)
     }
     
     func startToScan() {
@@ -148,6 +143,18 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
     func stopScanning() {
     
         centralManager?.stopScan()
+    }
+    
+    func startToConnect(_ indexPath: IndexPath) {
+        
+        let allKeys = Array(allItems.keys)
+        let targetKey = allKeys[indexPath.row]
+        let targetItem = allItems[targetKey]
+        
+        NSLog("Connecting to \(targetKey)...")
+        
+        // 藍芽連線
+        centralManager?.connect(targetItem!.peripheral, options: nil)
     }
     
     func showAlert(_ msssage:String) {
