@@ -15,6 +15,9 @@ class SensorDetailViewController: UIViewController, CBPeripheralDelegate {
     
     @IBOutlet weak var humidityLabel: UILabel!
     
+    var targetPeripheral:CBPeripheral?
+    var targetCharacteristic:CBCharacteristic?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
