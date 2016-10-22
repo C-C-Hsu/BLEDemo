@@ -10,6 +10,7 @@ import UIKit
 import CoreBluetooth
 
 let target_characteristic_uuid = "ffe1" // KentDongle
+let sensor_characteristic_uuid = "dfb1" // Bluno
 
 class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
 
