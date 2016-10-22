@@ -34,12 +34,22 @@ class DetailViewController: UIViewController, CBPeripheralDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
         
+        let viewController = self.presentingViewController as!
+        MasterViewController
+        NSLog(viewController.detailInfo)
+        
         logTextView.text = ""
         targetPeripheral?.delegate = self
         // Listener
         targetPeripheral?.setNotifyValue(true, for: targetCharacteristic!)
     }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        targetPeripheral?.setNotifyValue(false, for: targetCharacteristic!)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
