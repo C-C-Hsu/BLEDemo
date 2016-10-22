@@ -263,11 +263,11 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
         
         detailInfo += "*** Peripheral: \(peripheral.name!)\n \(peripheral.services!.count) services.\n"
         
-        detailInfo += "*** Service: \(service.uuid.uuidString)\n \(service.characteristics!.count) characteristics.\n"
+        detailInfo += "** Service: \(service.uuid.uuidString)\n \(service.characteristics!.count) characteristics.\n"
         
         for tmp in service.characteristics! {
             
-            detailInfo += "*** Characteristic: \(tmp.uuid.uuidString)\n"
+            detailInfo += "* Characteristic: \(tmp.uuid.uuidString)\n"
         }
         
         detailInfo += "-------------------------------------\n"
