@@ -131,6 +131,13 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
         startToConnect(indexPath)
     }
     
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        
+        shouldTalking = false
+        
+        startToConnect(indexPath)
+    }
+    
     func startToScan() {
         
         NSLog("Start Scan.")
