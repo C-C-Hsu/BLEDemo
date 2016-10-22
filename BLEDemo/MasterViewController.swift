@@ -48,6 +48,20 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
         
         centralManager = CBCentralManager(delegate: self, queue:nil)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if talkingPeripheral != nil {
+            
+            centralManager?.cancelPeripheralConnection(talkingPeripheral!)
+            talkingPeripheral = nil
+            talkingCharacteristic = nil
+            
+            // Resume the scan
+            startToScan()
+        }
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         self.clearsSelectionOnViewWillAppear = self.splitViewController!.isCollapsed
