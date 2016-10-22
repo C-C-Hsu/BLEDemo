@@ -18,6 +18,8 @@ class SensorDetailViewController: UIViewController, CBPeripheralDelegate {
     var targetPeripheral:CBPeripheral?
     var targetCharacteristic:CBCharacteristic?
     
+    var incomingBuffer = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,5 +44,29 @@ class SensorDetailViewController: UIViewController, CBPeripheralDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
+        
+        guard let receivedString = String(data: characteristic.value!, encoding: .utf8) else {
+            return
+        }
+        
+        NSLog("Receive: \(receivedString)")
+        
+        incomingBuffer += receivedString
+        
+        if incomingBuffer.hasSuffix("\r\n") {
+            
+            // Got end of a Json packet
+            let data = incomingBuffer.data(using: .utf8)
+            incomingBuffer = ""
+            let jsonObject = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments)
+            
+            if let info = jsonObject as? Dictionary<String, Any> {
+                
+                
+            }
+        }
+    }
 
 }
