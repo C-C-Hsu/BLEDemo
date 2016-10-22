@@ -12,7 +12,10 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
+    @IBOutlet weak var inputTextField: UITextField!
 
+    @IBOutlet weak var logTextView: UITextView!
+    
     func configureView() {
         // Update the user interface for the detail item.
         if let detail = self.detailItem {
@@ -40,6 +43,10 @@ class DetailViewController: UIViewController {
         }
     }
 
+    @IBAction func sendButtonPressed(_ sender: AnyObject) {
+        
+        
+    }
 
 }
 

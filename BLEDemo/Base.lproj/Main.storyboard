@@ -60,8 +60,16 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM">
-                        <barButtonItem key="rightBarButtonItem" title="Send" id="dMO-iD-3ha"/>
+                        <barButtonItem key="rightBarButtonItem" title="Send" id="dMO-iD-3ha">
+                            <connections>
+                                <action selector="sendButtonPressed:" destination="JEX-9P-axG" id="HDS-a7-VoB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="inputTextField" destination="9xr-5L-1UH" id="wKq-5h-Hrd"/>
+                        <outlet property="logTextView" destination="FhH-Zv-Bb4" id="NNo-QB-ckI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
