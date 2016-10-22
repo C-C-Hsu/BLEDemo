@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreBluetooth
 
-class SensorDetailViewController: UIViewController {
+class SensorDetailViewController: UIViewController, CBPeripheralDelegate {
 
     @IBOutlet weak var temperatureLabel: UILabel!
     
