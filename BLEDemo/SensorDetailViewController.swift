@@ -22,6 +22,9 @@ class SensorDetailViewController: UIViewController, CBPeripheralDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        targetPeripheral?.delegate = self
+        targetPeripheral?.setNotifyValue(true, for: targetCharacteristic!)
     }
 
     override func didReceiveMemoryWarning() {
