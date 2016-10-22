@@ -33,6 +33,11 @@ class DetailViewController: UIViewController, CBPeripheralDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
+        
+        logTextView.text = ""
+        targetPeripheral?.delegate = self
+        // Listener
+        targetPeripheral?.setNotifyValue(true, for: targetCharacteristic!)
     }
 
     override func didReceiveMemoryWarning() {
