@@ -249,4 +249,40 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
         peripheral.discoverCharacteristics(nil, for: targetService!)
     }
     
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
+        
+        if error != nil {
+            
+            // 藍芽取消連線
+            centralManager?.cancelPeripheralConnection(peripheral)
+            
+            NSLog("Error: \(error!)")
+            
+            return
+        }
+        
+        detailInfo += "*** Peripheral: \(peripheral.name!)\n \(peripheral.services!.count) services."
+        
+        detailInfo += "*** Service: \(service.uuid.uuidString)\n \(service.characteristics!.count) characteristics."
+        
+        for tmp in service.characteristics! {
+            
+            detailInfo += "*** Characteristic: \(tmp.uuid.uuidString)\n"
+        }
+        
+        if restServies.isEmpty {
+            
+            showAlert(detailInfo)
+            
+            centralManager?.cancelPeripheralConnection(peripheral)
+        } else {
+            
+            // Pick the first one
+            let targetService = restServies.first
+            restServies.remove(at: 0)
+            
+            peripheral.discoverCharacteristics(nil, for: targetService!)
+        }
+    }
+
 }
