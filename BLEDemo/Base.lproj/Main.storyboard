@@ -135,7 +135,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Master" id="Zdf-7t-Un8"/>
                     <connections>
-                        <segue destination="o9q-KM-Wiv" kind="show" id="GPU-lg-DRD"/>
+                        <segue destination="o9q-KM-Wiv" kind="show" identifier="showSensorDetail" id="GPU-lg-DRD"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
