@@ -54,8 +54,35 @@ class DetailViewController: UIViewController, CBPeripheralDelegate {
 
     @IBAction func sendButtonPressed(_ sender: AnyObject) {
         
+        guard let text = inputTextField.text else {
+            return
+        }
         
+        guard text.characters.count > 0 else {
+            return
+        }
+        
+        // Dismiss the keyboard
+        inputTextField.resignFirstResponder()
+        guard let dataWillSend = text.data(using: .utf8) else {
+            return
+        }
+        
+        targetPeripheral?.writeValue(dataWillSend, for: targetCharacteristic!, type: .withoutResponse)
+        // Type: withResponse會等待回應
     }
 
+    // 藍芽接收到資料回應
+    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
+        
+        let content = String(data: characteristic.value!, encoding: .utf8)
+        
+        if content != nil {
+            
+            NSLog("Receive: \(content)")
+            
+            logTextView.text! += content!
+        }
+    }
 }
 
