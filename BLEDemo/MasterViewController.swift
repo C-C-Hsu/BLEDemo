@@ -97,6 +97,11 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
+        } else if segue.identifier == "showSensorDetail" {
+            
+            let controller = segue.destination as!SensorDetailViewController
+            controller.targetPeripheral = talkingPeripheral
+            controller.targetCharacteristic = talkingCharacteristic
         }
     }
     
