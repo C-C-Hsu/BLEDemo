@@ -9,6 +9,8 @@
 import UIKit
 import CoreBluetooth
 
+let target_characteristic_uuid = "ffe1" // KentDongle
+
 class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
 
     var detailViewController: DetailViewController? = nil
@@ -19,6 +21,11 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
     var restServies = [CBService]()
     
     var centralManager:CBCentralManager?
+    
+    // For Talking support
+    var shouldTalking = false
+    var talkingPeripheral:CBPeripheral?
+    var talkingCharacteristic:CBCharacteristic?
     
     var allItems = [String:DiscoveredItem]()
     
