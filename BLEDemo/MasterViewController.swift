@@ -68,11 +68,17 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
     // MARK: - Segues
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "showDetail" {
-            if let indexPath = self.tableView.indexPathForSelectedRow {
-                let object = objects[indexPath.row] as! NSDate
+            
+            if self.tableView.indexPathForSelectedRow != nil {
+                
+//                let object = objects[indexPath.row] as! NSDate
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem = object
+//                controller.detailItem = object
+                controller.targetPeripheral = talkingPeripheral
+                controller.targetCharacteristic = talkingCharacteristic
+                
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
