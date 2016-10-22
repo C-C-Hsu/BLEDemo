@@ -142,10 +142,10 @@
             </objects>
             <point key="canvasLocation" x="709" y="-630"/>
         </scene>
-        <!--View Controller-->
+        <!--Sensor Detail View Controller-->
         <scene sceneID="YOA-nl-QxQ">
             <objects>
-                <viewController id="o9q-KM-Wiv" sceneMemberID="viewController">
+                <viewController id="o9q-KM-Wiv" customClass="SensorDetailViewController" customModule="BLEDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vPZ-qI-euj"/>
                         <viewControllerLayoutGuide type="bottom" id="V8o-Z9-m6y"/>
