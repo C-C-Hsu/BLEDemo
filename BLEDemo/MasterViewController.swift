@@ -289,6 +289,18 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
         for tmp in service.characteristics! {
             
             detailInfo += "* Characteristic: \(tmp.uuid.uuidString)\n"
+            
+            // Chack if shouldTalking is true and it is what we are looking for.
+            if shouldTalking && tmp.uuid.uuidString.lowercased() == target_characteristic_uuid {
+                
+                restServies.removeAll()
+                
+                talkingPeripheral = peripheral
+                talkingCharacteristic = tmp
+                
+                self.performSegue(withIdentifier: "showDetail", sender: nil)
+                return
+            }
         }
         
         detailInfo += "-------------------------------------\n"
