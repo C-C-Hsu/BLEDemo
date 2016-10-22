@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import CoreBluetooth
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, CBPeripheralDelegate {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
     @IBOutlet weak var inputTextField: UITextField!
 
     @IBOutlet weak var logTextView: UITextView!
+    
+    var targetPeripheral:CBPeripheral?
+    var targetCharacteristic:CBCharacteristic?
     
     func configureView() {
         // Update the user interface for the detail item.
