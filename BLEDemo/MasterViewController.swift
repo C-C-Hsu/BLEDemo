@@ -321,6 +321,15 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
                 
                 self.performSegue(withIdentifier: "showDetail", sender: nil)
                 return
+            } else if shouldTalking && tmp.uuid.uuidString.lowercased() == sensor_characteristic_uuid {
+                
+                restServies.removeAll()
+                
+                talkingPeripheral = peripheral
+                talkingCharacteristic = tmp
+                
+                self.performSegue(withIdentifier: "showSensorDetail", sender: nil)
+                return
             }
         }
         
