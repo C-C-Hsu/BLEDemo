@@ -71,6 +71,11 @@ class MasterViewController: UITableViewController, CBCentralManagerDelegate, CBP
             }
         }
     }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        return false
+    }
 
     // MARK: - Table View
 
